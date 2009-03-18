@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Patrik Hedman"]
-  s.date = %q{2009-03-17}
+  s.date = %q{2009-03-18}
   s.description = %q{TODO}
   s.email = %q{patrik@moresale.se}
   s.files = ["README.rdoc", "VERSION.yml", "lib/ffmpeg", "lib/ffmpeg/class_methods.rb", "lib/ffmpeg/ffmpeg_command.rb", "lib/ffmpeg/helper_methods.rb", "lib/ffmpeg/main_options.rb", "lib/ffmpeg/video_options.rb", "lib/ffmpeg.rb", "spec/ffmpeg_spec.rb", "spec/spec_helper.rb"]

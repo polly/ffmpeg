@@ -41,7 +41,7 @@ module FFMpeg
     begin
       yield if block_given?
     rescue Exception => exception
-      Thread.current[:'method checking enabled'] = true
+      Thread.current[:'method checking disabled'] = true
       raise exception
     end
   end
@@ -59,7 +59,7 @@ module FFMpeg
   # 
   #
   def method_checking_enabled?
-    !Thread.current[:'method checking enabled']
+    !Thread.current[:'method checking disabled']
   end
   
   #
