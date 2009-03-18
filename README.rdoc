@@ -1,6 +1,6 @@
 = FFMpeg
 
-	A DSL for building and executing ffmpeg commands.
+  A DSL for building and executing ffmpeg commands.
 
 == Requirements
 
@@ -12,30 +12,30 @@
 
 == Usage
 	
-	To build and execute a command you would use the FFMpeg::convert method and then call the FFMpeg::run method like this:
-	
-		include FFMpeg
-	
-		convert "file.ext", :to => "new_file.ext" do
-			seek 		 "00:01:13"
-			duration "00:10:01"
-		end.run
+  To build and execute a command you would use the FFMpeg::convert method and then call the FFMpeg::run method like this:
+
+    include FFMpeg
+
+    convert "file.ext", :to => "new_file.ext" do
+      seek     "00:01:13"
+      duration "00:10:01"
+    end.run
 
 == Extending
-	
-	FFMpeg takes a lot of options, I mean alot ;), so I haven't been able to add methods for wrapping them all yet.
-	Luckily it's really easy to add your own wrapper methods, just add them to the class that's including the FFMpeg module.
-	So if you wanted to add a method for say, setting the video quantizer scale blur for example, here's how you could do it:
 
-		def	quantizer_scale_blur(blur)
-			FFMpegCommand << "-qblur #{blur}"
-		end
-	
-	You would then call it inside the convert block just like any other method:
-	
-		convert "file.ext", :to => "new_file.ext" do
-			quantizer_scale_blur "0.5"
-		end
+  FFMpeg takes a lot of options, I mean alot ;), so I haven't been able to add methods for wrapping them all yet.
+  Luckily it's really easy to add your own wrapper methods, just add them to the class that's including the FFMpeg module.
+  So if you wanted to add a method for say, setting the video quantizer scale blur for example, here's how you could do it:
 
-	If you where to add a method with the same name as one already defined in the library your method will take precedence
-	over the predefined one, a warning message informing you about the conflict will be printed out through $stderr however.
+    def quantizer_scale_blur(blur)
+      FFMpegCommand << "-qblur #{blur}"
+    end
+
+  You would then call it inside the convert block just like any other method:
+
+    convert "file.ext", :to => "new_file.ext" do
+      quantizer_scale_blur "0.5"
+    end
+
+  If you where to add a method with the same name as one already defined in the library your method will take precedence
+  over the predefined one, a warning message informing you about the conflict will be printed out through $stderr however.
