@@ -145,18 +145,3 @@ describe "FFMpeg Main Options" do
     FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -scodec copy")
   end
 end
-
-describe "FFMpeg Video Options" do
-  before(:each) do
-    @from_file, @to_file = "~/Desktop/test.avi", "~/Desktop/test2.avi"
-    FFMpegCommand.clear
-  end
-  
-  it "should set the resolution" do
-    convert @from_file, :to => @to_file do
-      resolution "vga"
-    end
-    
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -s vga")
-  end
-end
