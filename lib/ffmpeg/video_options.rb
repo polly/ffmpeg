@@ -67,7 +67,7 @@ module FFMpeg
     
     # Set the video bitrate in bit/s (default = 200 kb/s or '200k').
     def video_bitrate(bitrate)
-      FFMpegCommand << "-b #{bitrate}"
+      FFMpegCommand << "-vb #{bitrate}"
     end
     
     # Set the number of video frames to record.

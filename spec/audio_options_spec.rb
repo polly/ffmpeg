@@ -11,7 +11,7 @@ describe "FFMpeg Audio Options" do
       audio_frames 200
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -aframes 200")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -aframes 200 #{@to_file}")
   end
 
   it "should set sampling frequency" do
@@ -19,7 +19,7 @@ describe "FFMpeg Audio Options" do
       audio_sampling 22050
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -ar 22050")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -ar 22050 #{@to_file}")
   end
 
   it "should set bitrate" do
@@ -27,7 +27,7 @@ describe "FFMpeg Audio Options" do
       audio_bitrate "128k"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -ab 128k")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -ab 128k #{@to_file}")
   end
   
   it "should set number of channels" do
@@ -35,7 +35,7 @@ describe "FFMpeg Audio Options" do
       audio_channels 2
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -ac 2")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -ac 2 #{@to_file}")
   end
 
   it "should disable recording" do
@@ -43,7 +43,7 @@ describe "FFMpeg Audio Options" do
       disable_audio
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -an")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -an #{@to_file}")
   end
   
   it "should set the codec explicitly" do
@@ -51,7 +51,7 @@ describe "FFMpeg Audio Options" do
       audio_codec "mp3"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -acodec mp3")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -acodec mp3 #{@to_file}")
   end
   
   it "should set that a new audio stream is being added to the current output stream" do
@@ -59,7 +59,7 @@ describe "FFMpeg Audio Options" do
       new_audio
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -newaudio")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -newaudio #{@to_file}")
   end
   
   it "should set the language code" do
@@ -67,6 +67,6 @@ describe "FFMpeg Audio Options" do
       audio_language "eng"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -alang eng")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -alang eng #{@to_file}")
   end
 end

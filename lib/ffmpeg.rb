@@ -39,13 +39,13 @@ module FFMpeg
   #
   def convert(from_file, to_file = {})
     FFMpegCommand << "-i #{from_file}"
-    FFMpegCommand << "#{to_file[:to]}" unless to_file[:to].nil?
     begin
       yield if block_given?
     rescue Exception => exception
       Thread.current[:'method checking disabled'] = true
       raise exception
     end
+    FFMpegCommand << "#{to_file[:to]}" unless to_file[:to].nil?
   end
   
   #

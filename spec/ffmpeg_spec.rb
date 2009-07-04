@@ -38,7 +38,7 @@ describe "FFMpeg Main Options" do
       duration "00:03:01"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -t 00:03:01")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -t 00:03:01 #{@to_file}")
   end
   
   it "should set a file size limit" do
@@ -46,7 +46,7 @@ describe "FFMpeg Main Options" do
       file_size_limit 104_857_600
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -fs 104857600")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -fs 104857600 #{@to_file}")
   end
   
   it "should seek to the specified time position" do
@@ -54,7 +54,7 @@ describe "FFMpeg Main Options" do
       seek "00:03:01"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -ss 00:03:01")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -ss 00:03:01 #{@to_file}")
   end
   
   it "should the input time offset" do
@@ -62,7 +62,7 @@ describe "FFMpeg Main Options" do
       offset "00:03:01"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -itsoffset 00:03:01")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -itsoffset 00:03:01 #{@to_file}")
   end
   
   it "should the title" do
@@ -70,7 +70,7 @@ describe "FFMpeg Main Options" do
       title "Some Title"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -title 'Some Title'")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -title 'Some Title' #{@to_file}")
   end
   
   it "should the author" do
@@ -78,7 +78,7 @@ describe "FFMpeg Main Options" do
       author "PMH"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -author 'PMH'")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -author 'PMH' #{@to_file}")
   end
   
   it "should the copyright" do
@@ -86,7 +86,7 @@ describe "FFMpeg Main Options" do
       copyright "(c) Patrik Hedman 2009"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -copyright '(c) Patrik Hedman 2009'")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -copyright '(c) Patrik Hedman 2009' #{@to_file}")
   end
   
   it "should the comment" do
@@ -94,7 +94,7 @@ describe "FFMpeg Main Options" do
       comment "Some Comment"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -comment 'Some Comment'")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -comment 'Some Comment' #{@to_file}")
   end
   
   it "should the album" do
@@ -102,7 +102,7 @@ describe "FFMpeg Main Options" do
       album "An awesome album"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -album 'An awesome album'")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -album 'An awesome album' #{@to_file}")
   end
   
   it "should the track" do
@@ -110,7 +110,7 @@ describe "FFMpeg Main Options" do
       track 1
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -track 1")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -track 1 #{@to_file}")
   end
   
   it "should the year" do
@@ -118,7 +118,7 @@ describe "FFMpeg Main Options" do
       year 1985
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -year 1985")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -year 1985 #{@to_file}")
   end
   
   it "should the target" do
@@ -126,7 +126,7 @@ describe "FFMpeg Main Options" do
       target "vcd"
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -target vcd")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -target vcd #{@to_file}")
   end
   
   it "should the number of frames to record" do
@@ -134,7 +134,7 @@ describe "FFMpeg Main Options" do
       frames_to_record 50
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -dframes 50")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -dframes 50 #{@to_file}")
   end
   
   it "should set the subtitle codec" do
@@ -142,6 +142,6 @@ describe "FFMpeg Main Options" do
       subtitle_codec 'copy'
     end
     
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file} -scodec copy")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} -scodec copy #{@to_file}")
   end
 end
