@@ -1,6 +1,7 @@
 require 'ffmpeg/class_methods'
 require 'ffmpeg/main_options'
 require 'ffmpeg/video_options'
+require 'ffmpeg/video_advanced_options'
 require 'ffmpeg/audio_options'
 require 'ffmpeg/ffmpeg_command'
 require 'ffmpeg/helper_methods'
@@ -9,6 +10,7 @@ module FFMpeg
   include HelperMethods
   include MainOptions
   include VideoOptions
+  include VideoAdvancedOptions
   include AudioOptions
   
   #
