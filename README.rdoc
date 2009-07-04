@@ -39,3 +39,8 @@
 
   If you where to add a method with the same name as one already defined in the library your method will take precedence
   over the predefined one, a warning message informing you about the conflict will be printed out through $stderr however.
+
+== Credit where credit's due
+	
+	Thank's to {James W. Thompson, II}[http://github.com/jwthompson2], there's now support for all of the standard video and audio options from
+	the ffmpeg documentation as well improved and refactored specs.
