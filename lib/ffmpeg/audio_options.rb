@@ -9,7 +9,6 @@ module FFMpeg
     def audio_sampling(frequency)
       FFMpegCommand << "-ar #{frequency}"
     end
-    
 
     # Set the audio bitrate in bit/s (default = 64k).
     def audio_bitrate(bitrate)
@@ -31,7 +30,10 @@ module FFMpeg
       FFMpegCommand << "-acodec #{codec}"
     end
 
-    # Add a new audio track to the output file. If you want to specify parameters, do so before -newaudio (-acodec, -ab, etc..). Mapping will be done automatically, if the number of output streams is equal to the number of input streams, else it will pick the first one that matches. You can override the mapping using -map as usual. Example:
+    # Add a new audio track to the output file. If you want to specify parameters, do so before -newaudio (-acodec,
+    # -ab, etc..). Mapping will be done automatically, if the number of output streams is equal to the number of input
+    # streams, else it will pick the first one that matches. You can override the mapping using -map as usual. Example:
+    #
     # ffmpeg -i file.mpg -vcodec copy -acodec ac3 -ab 384k test.mpg -acodec mp2 -ab 192k -newaudio
     def new_audio
       FFMpegCommand << "-newaudio"
