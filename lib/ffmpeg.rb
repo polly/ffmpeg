@@ -18,7 +18,7 @@ module FFMpeg
   def self.included(klass)
     klass.extend ClassMethods
     
-    # 
+    #
     # Everytime a method is added to the
     # class, check for conflicts with existing
     # module methods
@@ -58,7 +58,8 @@ module FFMpeg
   private
   
   #
-  # 
+  # Checks if the thread local varialble 'method checking disabled'
+  # is true or false
   #
   def method_checking_enabled?
     !Thread.current[:'method checking disabled']
