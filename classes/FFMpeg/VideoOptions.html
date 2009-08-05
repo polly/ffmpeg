@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: FFMpeg::VideoOptions</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">FFMpeg::VideoOptions</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ffmpeg/video_options_rb.html">
+                lib/ffmpeg/video_options.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000022">aspect</a>&nbsp;&nbsp;
+      <a href="#M000024">crop_bottom</a>&nbsp;&nbsp;
+      <a href="#M000025">crop_left</a>&nbsp;&nbsp;
+      <a href="#M000026">crop_right</a>&nbsp;&nbsp;
+      <a href="#M000023">crop_top</a>&nbsp;&nbsp;
+      <a href="#M000032">disable_video</a>&nbsp;&nbsp;
+      <a href="#M000021">framerate</a>&nbsp;&nbsp;
+      <a href="#M000041">new_video</a>&nbsp;&nbsp;
+      <a href="#M000028">pad_bottom</a>&nbsp;&nbsp;
+      <a href="#M000031">pad_color</a>&nbsp;&nbsp;
+      <a href="#M000029">pad_left</a>&nbsp;&nbsp;
+      <a href="#M000030">pad_right</a>&nbsp;&nbsp;
+      <a href="#M000027">pad_top</a>&nbsp;&nbsp;
+      <a href="#M000018">resolution</a>&nbsp;&nbsp;
+      <a href="#M000038">same_video_quality</a>&nbsp;&nbsp;
+      <a href="#M000019">video_bitrate</a>&nbsp;&nbsp;
+      <a href="#M000033">video_bitrate_tolerance</a>&nbsp;&nbsp;
+      <a href="#M000036">video_buffer_size</a>&nbsp;&nbsp;
+      <a href="#M000037">video_codec</a>&nbsp;&nbsp;
+      <a href="#M000020">video_frames</a>&nbsp;&nbsp;
+      <a href="#M000034">video_maximum_bitrate</a>&nbsp;&nbsp;
+      <a href="#M000035">video_minimum_bitrate</a>&nbsp;&nbsp;
+      <a href="#M000039">video_pass</a>&nbsp;&nbsp;
+      <a href="#M000040">video_pass_logfile</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="#M000022" class="method-signature">
+          <span class="method-name">aspect</span><span class="method-args">(aspect)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set <a href="VideoOptions.html#M000022">aspect</a> ratio (4:3, 16:9 or
+1.3333, 1.7777).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 84</span>
+84:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">aspect</span>(<span class="ruby-identifier">aspect</span>)
+85:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-aspect #{aspect}&quot;</span>
+86:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+          <a href="#M000024" class="method-signature">
+          <span class="method-name">crop_bottom</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set bottom crop band size (in pixels).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000024-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 94</span>
+94:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">crop_bottom</span>(<span class="ruby-identifier">size</span>)
+95:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-cropbottom #{size}&quot;</span>
+96:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+          <a href="#M000025" class="method-signature">
+          <span class="method-name">crop_left</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set left crop band size (in pixels).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 99</span>
+ 99:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">crop_left</span>(<span class="ruby-identifier">size</span>)
+100:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-cropleft #{size}&quot;</span>
+101:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+          <a href="#M000026" class="method-signature">
+          <span class="method-name">crop_right</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set right crop band size (in pixels).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 104</span>
+104:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">crop_right</span>(<span class="ruby-identifier">size</span>)
+105:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-cropright #{size}&quot;</span>
+106:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+          <a href="#M000023" class="method-signature">
+          <span class="method-name">crop_top</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set top crop band size (in pixels).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000023-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 89</span>
+89:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">crop_top</span>(<span class="ruby-identifier">size</span>)
+90:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-croptop #{size}&quot;</span>
+91:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000032" class="method-detail">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+          <a href="#M000032" class="method-signature">
+          <span class="method-name">disable_video</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Disable video recording.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000032-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 135</span>
+135:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable_video</span>
+136:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;-vn&quot;</span>
+137:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="#M000021" class="method-signature">
+          <span class="method-name">framerate</span><span class="method-args">(fps)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set frame rate (Hz value, fraction or abbreviation), (default = 25).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 79</span>
+79:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">framerate</span>(<span class="ruby-identifier">fps</span>)
+80:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-r #{fps}&quot;</span>
+81:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <a href="#M000041" class="method-signature">
+          <span class="method-name">new_video</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add a new video stream to the current output stream.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000041-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 193</span>
+193:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_video</span>
+194:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;-newvideo&quot;</span>
+195:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+          <a href="#M000028" class="method-signature">
+          <span class="method-name">pad_bottom</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set bottom pad band size (in pixels).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 114</span>
+114:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pad_bottom</span>(<span class="ruby-identifier">size</span>)
+115:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-padbottom #{size}&quot;</span>
+116:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000031" class="method-detail">
+        <a name="M000031"></a>
+
+        <div class="method-heading">
+          <a href="#M000031" class="method-signature">
+          <span class="method-name">pad_color</span><span class="method-args">(color)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set color of padded bands. The value for padcolor is expressed as a six
+digit hexadecimal number where the first two digits represent red, the
+middle two digits green and last two digits blue (default = 000000
+(black)).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000031-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 130</span>
+130:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pad_color</span>(<span class="ruby-identifier">color</span>)
+131:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-padcolor #{color}&quot;</span>
+132:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+          <a href="#M000029" class="method-signature">
+          <span class="method-name">pad_left</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set left pad band size (in pixels).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000029-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 119</span>
+119:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pad_left</span>(<span class="ruby-identifier">size</span>)
+120:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-padleft #{size}&quot;</span>
+121:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+          <a href="#M000030" class="method-signature">
+          <span class="method-name">pad_right</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set right pad band size (in pixels).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000030-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000030-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 124</span>
+124:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pad_right</span>(<span class="ruby-identifier">size</span>)
+125:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-padright #{size}&quot;</span>
+126:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+          <a href="#M000027" class="method-signature">
+          <span class="method-name">pad_top</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set top pad band size (in pixels).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 109</span>
+109:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pad_top</span>(<span class="ruby-identifier">size</span>)
+110:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-padtop #{size}&quot;</span>
+111:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+          <a href="#M000018" class="method-signature">
+          <span class="method-name">resolution</span><span class="method-args">(resolution)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set frame size. The format is `wxh&#8217; (ffserver default = 160x128,
+ffmpeg default = same as source). The following abbreviations are
+recognized:
+</p>
+<pre>
+  'sqcif'
+      128x96
+  'qcif'
+      176x144
+  'cif'
+      352x288
+  '4cif'
+      704x576
+  'qqvga'
+      160x120
+  'qvga'
+      320x240
+  'vga'
+      640x480
+  'svga'
+      800x600
+  'xga'
+      1024x768
+  'uxga'
+      1600x1200
+  'qxga'
+      2048x1536
+  'sxga'
+      1280x1024
+  'qsxga'
+      2560x2048
+  'hsxga'
+      5120x4096
+  'wvga'
+      852x480
+  'wxga'
+      1366x768
+  'wsxga'
+      1600x1024
+  'wuxga'
+      1920x1200
+  'woxga'
+      2560x1600
+  'wqsxga'
+      3200x2048
+  'wquxga'
+      3840x2400
+  'whsxga'
+      6400x4096
+  'whuxga'
+      7680x4800
+  'cga'
+      320x200
+  'ega'
+      640x350
+  'hd480'
+      852x480
+  'hd720'
+      1280x720
+  'hd1080'
+      1920x1080
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000018-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000018-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 64</span>
+64:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">resolution</span>(<span class="ruby-identifier">resolution</span>)
+65:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-s #{resolution}&quot;</span>
+66:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="#M000038" class="method-signature">
+          <span class="method-name">same_video_quality</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Use same video quality as source (implies VBR).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 171</span>
+171:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">same_video_quality</span>
+172:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;-sameq&quot;</span>
+173:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+          <a href="#M000019" class="method-signature">
+          <span class="method-name">video_bitrate</span><span class="method-args">(bitrate)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the video bitrate in bit/s (default = 200 kb/s or &#8216;200k&#8217;).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000019-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000019-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 69</span>
+69:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">video_bitrate</span>(<span class="ruby-identifier">bitrate</span>)
+70:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-vb #{bitrate}&quot;</span>
+71:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+          <a href="#M000033" class="method-signature">
+          <span class="method-name">video_bitrate_tolerance</span><span class="method-args">(tolerance)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set video bitrate tolerance (in bits, default 4000k). Has a minimum value
+of: (target_bitrate/target_framerate). In 1-pass mode, bitrate tolerance
+specifies how far ratecontrol is willing to deviate from the target average
+bitrate value. This is not related to min/max bitrate. Lowering tolerance
+too much has an adverse effect on quality.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000033-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 143</span>
+143:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">video_bitrate_tolerance</span>(<span class="ruby-identifier">tolerance</span>)
+144:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-bt #{tolerance}&quot;</span>
+145:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+          <a href="#M000036" class="method-signature">
+          <span class="method-name">video_buffer_size</span><span class="method-args">(size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set video buffer verifier buffer size (in bits).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 160</span>
+160:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">video_buffer_size</span>(<span class="ruby-identifier">size</span>)
+161:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-bufsize #{size}&quot;</span>
+162:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+          <a href="#M000037" class="method-signature">
+          <span class="method-name">video_codec</span><span class="method-args">(codec)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+`-vcodec codec&#8217; Force video codec to codec. Use the copy special
+value to tell that the raw codec data must be copied as is.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 166</span>
+166:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">video_codec</span>(<span class="ruby-identifier">codec</span>)
+167:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-vcodec #{codec}&quot;</span>
+168:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="#M000020" class="method-signature">
+          <span class="method-name">video_frames</span><span class="method-args">(number)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the number of video frames to record.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 74</span>
+74:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">video_frames</span>(<span class="ruby-identifier">number</span>)
+75:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-vframes #{number}&quot;</span>
+76:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+          <a href="#M000034" class="method-signature">
+          <span class="method-name">video_maximum_bitrate</span><span class="method-args">(bitrate)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set max video bitrate (in bit/s). Requires -bufsize to be set.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000034-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 148</span>
+148:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">video_maximum_bitrate</span>(<span class="ruby-identifier">bitrate</span>)
+149:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-maxrate #{bitrate}&quot;</span>
+150:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+          <a href="#M000035" class="method-signature">
+          <span class="method-name">video_minimum_bitrate</span><span class="method-args">(bitrate)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set min video bitrate (in bit/s). Most useful in setting up a CBR encode:
+ffmpeg -i myfile.avi -b 4000k -minrate 4000k -maxrate 4000k -bufsize 1835k
+out.m2v It is of little use elsewise.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 155</span>
+155:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">video_minimum_bitrate</span>(<span class="ruby-identifier">bitrate</span>)
+156:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-minrate #{bitrate}&quot;</span>
+157:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <a href="#M000039" class="method-signature">
+          <span class="method-name">video_pass</span><span class="method-args">(index)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Select the pass number (1 or 2). It is used to do two-pass video encoding.
+The statistics of the video are recorded in the first pass into a log file
+(see also the option -passlogfile), and in the second pass that log file is
+used to generate the video at the exact requested bitrate. On pass 1, you
+may just deactivate audio and set output to null, examples for Windows and
+Unix:
+</p>
+<p>
+ffmpeg -i foo.mov -vcodec libxvid -pass 1 -an -f rawvideo -y NUL ffmpeg -i
+foo.mov -vcodec libxvid -pass 1 -an -f rawvideo -y /dev/null
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000039-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 182</span>
+182:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">video_pass</span>(<span class="ruby-identifier">index</span>)
+183:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-pass #{index}&quot;</span>
+184:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="#M000040" class="method-signature">
+          <span class="method-name">video_pass_logfile</span><span class="method-args">(prefix)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set two-pass log file name prefix to prefix, the default file name prefix
+is &quot;ffmpeg2pass&quot;. The complete file name will be
+`PREFIX-N.log&#8217;, where N is a number specific to the output stream.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000040-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ffmpeg/video_options.rb, line 188</span>
+188:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">video_pass_logfile</span>(<span class="ruby-identifier">prefix</span>)
+189:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-passlogfile #{prefix}&quot;</span>
+190:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
