@@ -42,7 +42,7 @@ module FFMpeg
     begin
       yield if block_given?
     rescue Exception => exception
-      Thread.current[:'method checking disabled'] = true
+      disable_method_checking!
       raise exception
     end
     FFMpegCommand << "#{to_file[:to]}" unless to_file[:to].nil?
@@ -65,6 +65,13 @@ module FFMpeg
     !Thread.current[:'method checking disabled']
   end
   
+  #
+  # Turns off the method checking functionality
+  #
+  def disable_method_checking!
+    Thread.current[:'method checking disabled'] = true
+  end
+
   #
   # Tries to locate the FFmpeg executable
   #
