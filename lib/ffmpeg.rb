@@ -56,11 +56,15 @@ module FFMpeg
   end
 
   #
-  # Runs ffmpeg
+  # Ru§ns ffmpeg
   #
   def run
-    path = @ffmpeg_path ? @ffmpeg_path : FFMpegCommand.command(locate_ffmpeg)
-    execute_command path
+    if path = @ffmpeg_path ? @ffmpeg_path : FFMpegCommand.command(locate_ffmpeg)
+      execute_command path
+    else
+      $stderr.puts "Couldn't locate ffmpeg, try to specify an explicit path 
+                    with the ffmpeg_path(path) method"
+    end
   end
   
   private
