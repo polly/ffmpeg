@@ -59,6 +59,7 @@ module FFMpeg
   # Ru§ns ffmpeg
   #
   def run
+    @@ffmpeg_path ||= ""
     unless (path = @@ffmpeg_path ? @@ffmpeg_path : locate_ffmpeg).empty?
       execute_command FFMpegCommand.command(path)
     else
