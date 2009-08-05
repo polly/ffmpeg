@@ -49,10 +49,18 @@ module FFMpeg
   end
   
   #
+  # Explicitly set ffmpeg path
+  #
+  def ffmpeg_path(path)
+    @ffmpeg_path = path
+  end
+
+  #
   # Runs ffmpeg
   #
   def run
-    execute_command FFMpegCommand.command(locate_ffmpeg)
+    path = @ffmpeg_path ? @ffmpeg_path : FFMpegCommand.command(locate_ffmpeg)
+    execute_command path
   end
   
   private
