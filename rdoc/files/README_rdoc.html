@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Sat Jul 04 21:07:10 +0200 2009</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1><a href="../classes/FFMpeg.html">FFMpeg</a></h1>
+<pre>
+  A DSL for building and executing ffmpeg commands.
+</pre>
+<h2>Requirements</h2>
+<pre>
+  It requires that you already have ffmpeg installed, obviously :)
+</pre>
+<h2>Install</h2>
+<pre>
+  gem install polly-ffmpeg --source http://gems.github.com
+</pre>
+<h2>Usage</h2>
+<pre>
+  To build and execute a command you would use the FFMpeg::convert method and then call the FFMpeg::run method like this:
+
+    include FFMpeg
+
+    convert &quot;file.ext&quot;, :to =&gt; &quot;new_file.ext&quot; do
+      seek     &quot;00:01:13&quot;
+      duration &quot;00:10:01&quot;
+    end.run
+</pre>
+<h2>Extending</h2>
+<pre>
+  FFMpeg takes a lot of options, I mean alot ;), so I haven't been able to add methods for wrapping them all yet.
+  Luckily it's really easy to add your own wrapper methods, just add them to the class that's including the FFMpeg module.
+  So if you wanted to add a method for say, setting the video quantizer scale blur for example, here's how you could do it:
+
+    def quantizer_scale_blur(blur)
+      FFMpegCommand &lt;&lt; &quot;-qblur #{blur}&quot;
+    end
+
+  You would then call it inside the convert block just like any other method:
+
+    convert &quot;file.ext&quot;, :to =&gt; &quot;new_file.ext&quot; do
+      quantizer_scale_blur &quot;0.5&quot;
+    end
+
+  If you where to add a method with the same name as one already defined in the library your method will take precedence
+  over the predefined one, a warning message informing you about the conflict will be printed out through $stderr however.
+</pre>
+<h2>Credit where credit&#8216;s due</h2>
+<pre>
+        Thank's to jwthompson2 (http://github.com/jwthompson2), there's now support for all of the standard video and
+        audio options from the ffmpeg documentation as well as improved and refactored specs.
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
