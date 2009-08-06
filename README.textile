@@ -1,16 +1,16 @@
-= FFMpeg
+h1. FFMpeg
 
   A DSL for building and executing ffmpeg commands.
 
-== Requirements
+h2. Requirements
 
   It requires that you already have ffmpeg installed, obviously :)
 
-== Install
+h2. Install
 
   gem install polly-ffmpeg --source http://gems.github.com
 
-== Usage
+h2. Usage
 
   To build and execute a command you would use the FFMpeg::convert method and then call the FFMpeg::run method like this:
 
@@ -21,7 +21,7 @@
       duration "00:10:01"
     end.run
 
-== Extending
+h2. Extending
 
   FFMpeg takes a lot of options, I mean alot ;), so I haven't been able to add methods for wrapping them all yet.
   Luckily it's really easy to add your own wrapper methods, just add them to the class that's including the FFMpeg module.
@@ -40,7 +40,7 @@
   If you where to add a method with the same name as one already defined in the library your method will take precedence
   over the predefined one, a warning message informing you about the conflict will be printed out through $stderr however.
 
-== Credit where credit's due
+h2. Credit where credit's due
 
-  Thank's to jwthompson2 (http://github.com/jwthompson2), there's now support for all of the standard video and 
+  Thank's to "jwthompson2":http://github.com/jwthompson2, there's now support for all of the standard video and 
   audio options from the ffmpeg documentation as well as improved and refactored specs.
