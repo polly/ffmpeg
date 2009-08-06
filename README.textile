@@ -21,6 +21,8 @@ h2. Usage
       duration "00:10:01"
     end.run
 
+  For more information checkout the "documentation":http://polly.github.com/ffmpeg/
+
 h2. Credit where credit's due
 
   Thank's to "jwthompson2":http://github.com/jwthompson2, there's now support for all of the standard video and 
