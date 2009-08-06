@@ -1,29 +1,30 @@
 h2. FFMpeg
 
-  A DSL for building and executing ffmpeg commands.
+A DSL for building and executing ffmpeg commands.
 
 h2. Requirements
 
-  It requires that you already have ffmpeg installed, obviously :)
+It requires that you already have ffmpeg installed, obviously :)
 
 h2. Install
 
-  gem install polly-ffmpeg --source http://gems.github.com
+gem install polly-ffmpeg --source http://gems.github.com
 
 h2. Usage
 
-  To build and execute a command you would use the FFMpeg::convert method and then call the FFMpeg::run method like this:
+To build and execute a command you would use the FFMpeg::convert method and then call the FFMpeg::run method like this:
 
-    include FFMpeg
+include FFMpeg
 
-    convert "file.ext", :to => "new_file.ext" do
-      seek     "00:01:13"
-      duration "00:10:01"
-    end.run
+convert "file.ext", :to => "new_file.ext" do
+<span>&nbsp;&nbsp;&nbsp;&nbsp;seek     "00:01:13"</span>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;duration "00:10:01"</span>
+end.run
 
-  For more information checkout the "documentation":http://polly.github.com/ffmpeg/
+For more information checkout the "documentation":http://polly.github.com/ffmpeg/
+
 
 h2. Credit where credit's due
 
-  Thank's to "jwthompson2":http://github.com/jwthompson2, there's now support for all of the standard video and 
-  audio options from the ffmpeg documentation as well as improved and refactored specs.
+Thank's to "jwthompson2":http://github.com/jwthompson2, there's now support for all of the standard video and 
+audio options from the ffmpeg documentation as well as improved and refactored specs.
