@@ -11,7 +11,7 @@
   gem install polly-ffmpeg --source http://gems.github.com
 
 == Usage
-	
+
   To build and execute a command you would use the FFMpeg::convert method and then call the FFMpeg::run method like this:
 
     include FFMpeg
@@ -41,6 +41,6 @@
   over the predefined one, a warning message informing you about the conflict will be printed out through $stderr however.
 
 == Credit where credit's due
-	
-	Thank's to jwthompson2 (http://github.com/jwthompson2), there's now support for all of the standard video and 
-	audio options from the ffmpeg documentation as well as improved and refactored specs.
+
+  Thank's to jwthompson2[http://github.com/jwthompson2], there's now support for all of the standard video and 
+  audio options from the ffmpeg documentation as well as improved and refactored specs.
