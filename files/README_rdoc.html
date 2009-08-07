@@ -92,29 +92,9 @@
       duration &quot;00:10:01&quot;
     end.run
 </pre>
-<h2>Extending</h2>
-<pre>
-  FFMpeg takes a lot of options, I mean alot ;), so I haven't been able to add methods for wrapping them all yet.
-  Luckily it's really easy to add your own wrapper methods, just add them to the class that's including the FFMpeg module.
-  So if you wanted to add a method for say, setting the video quantizer scale blur for example, here's how you could do it:
-
-    def quantizer_scale_blur(blur)
-      FFMpegCommand &lt;&lt; &quot;-qblur #{blur}&quot;
-    end
-
-  You would then call it inside the convert block just like any other method:
-
-    convert &quot;file.ext&quot;, :to =&gt; &quot;new_file.ext&quot; do
-      quantizer_scale_blur &quot;0.5&quot;
-    end
-
-  If you where to add a method with the same name as one already defined in the library your method will take precedence
-  over the predefined one, a warning message informing you about the conflict will be printed out through $stderr however.
-</pre>
 <h2>Credit where credit&#8216;s due</h2>
 <pre>
-        Thank's to jwthompson2 (http://github.com/jwthompson2), there's now support for all of the standard video and
-        audio options from the ffmpeg documentation as well as improved and refactored specs.
+  Thank's to jwthompson2 (http://github.com/jwthompson2), there's now support for all of the standard video and audio options from the ffmpeg documentation as well as improved and refactored specs.
 </pre>
 
     </div>
