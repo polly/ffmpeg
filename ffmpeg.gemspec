@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
      "LICENSE",
-     "README.rdoc",
+     "README.textile",
      "Rakefile",
      "ffmpeg.gemspec",
      "lib/ffmpeg.rb",
