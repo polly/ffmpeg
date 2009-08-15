@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: FileExtensions</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">FileExtensions</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/ffmpeg/file_extensions_rb.html">
+                lib/ffmpeg/file_extensions.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">EXT</td>
+          <td>=</td>
+          <td class="context-item-value">[     &quot;3g2&quot;,     &quot;3gp&quot;,     &quot;4xm&quot;,     &quot;IFF&quot;,     &quot;ISS&quot;,     &quot;MTV&quot;,     &quot;RoQ&quot;,     &quot;aac&quot;,     &quot;ac3&quot;,     &quot;adts&quot;,     &quot;aiff&quot;,     &quot;alaw&quot;,     &quot;amr&quot;,     &quot;apc&quot;,     &quot;ape&quot;,     &quot;asf&quot;,     &quot;asf_stream&quot;,     &quot;ass&quot;,     &quot;au&quot;,     &quot;avi&quot;,     &quot;avm2&quot;,     &quot;avs&quot;,     &quot;bethsoftvid&quot;,     &quot;bfi&quot;,     &quot;c93&quot;,     &quot;cavsvideo&quot;,     &quot;crc&quot;,     &quot;daud&quot;,     &quot;dirac&quot;,     &quot;dnxhd&quot;,     &quot;dsicin&quot;,     &quot;dts&quot;,     &quot;dv&quot;,     &quot;dvd&quot;,     &quot;dxa&quot;,     &quot;ea&quot;,     &quot;ea_cdata&quot;,     &quot;eac3&quot;,     &quot;f32be&quot;,     &quot;f32le&quot;,     &quot;f64be&quot;,     &quot;f64le&quot;,     &quot;ffm&quot;,     &quot;film_cpk&quot;,     &quot;flac&quot;,     &quot;flic&quot;,     &quot;flv&quot;,     &quot;framecrc&quot;,     &quot;gif&quot;,     &quot;gsm&quot;,     &quot;gxf&quot;,     &quot;h261&quot;,     &quot;h263&quot;,     &quot;h264&quot;,     &quot;idcin&quot;,     &quot;image2&quot;,     &quot;image2pipe&quot;,     &quot;ingenient&quot;,     &quot;ipmovie&quot;,     &quot;ipod&quot;,     &quot;lmlm4&quot;,     &quot;m4v&quot;,     &quot;matroska&quot;,     &quot;mjpeg&quot;,     &quot;mlp&quot;,     &quot;mm&quot;,     &quot;mmf&quot;,     &quot;mov&quot;,     &quot;mov&quot;,     &quot;mp4&quot;,     &quot;m4a&quot;,     &quot;3gp&quot;,     &quot;mp2&quot;,     &quot;mp3&quot;,     &quot;mp4&quot;,     &quot;mpc&quot;,     &quot;mpc&quot;,     &quot;mpeg&quot;,     &quot;mpeg1video&quot;,     &quot;mpeg2video&quot;,     &quot;mpegts&quot;,     &quot;mpegtsraw&quot;,     &quot;mpegvideo&quot;,     &quot;mpjpeg&quot;,     &quot;msnwctcp&quot;,     &quot;mulaw&quot;,     &quot;mvi&quot;,     &quot;mxf&quot;,     &quot;mxf_d10&quot;,     &quot;nc&quot;,     &quot;nsv&quot;,     &quot;null&quot;,     &quot;nut&quot;,     &quot;nuv&quot;,     &quot;ogg&quot;,     &quot;oma&quot;,     &quot;psp&quot;,     &quot;psxstr&quot;,     &quot;pva&quot;,     &quot;r3d&quot;,     &quot;rawvideo&quot;,     &quot;rcv&quot;,     &quot;redir&quot;,     &quot;rl2&quot;,     &quot;rm&quot;,     &quot;rpl&quot;,     &quot;rtp&quot;,     &quot;rtsp&quot;,     &quot;s16be&quot;,     &quot;s16le&quot;,     &quot;s24be&quot;,     &quot;s24le&quot;,     &quot;s32be&quot;,     &quot;s32le&quot;,     &quot;s8&quot;,     &quot;sdp&quot;,     &quot;shn&quot;,     &quot;siff&quot;,     &quot;smk&quot;,     &quot;sol&quot;,     &quot;svcd&quot;,     &quot;swf&quot;,     &quot;thp&quot;,     &quot;tiertexseq&quot;,     &quot;tta&quot;,     &quot;txd&quot;,     &quot;u16be&quot;,     &quot;u16le&quot;,     &quot;u24be&quot;,     &quot;u24le&quot;,     &quot;u32be&quot;,     &quot;u32le&quot;,     &quot;u8&quot;,     &quot;vc1&quot;,     &quot;vc1test&quot;,     &quot;vcd&quot;,     &quot;vmd&quot;,     &quot;vob&quot;,     &quot;voc&quot;,     &quot;wav&quot;,     &quot;wc3movie&quot;,     &quot;wsaud&quot;,     &quot;wsvqa&quot;,     &quot;wv&quot;,     &quot;xa&quot;,     &quot;yuv4mpegpipe&quot;</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
