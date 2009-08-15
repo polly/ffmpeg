@@ -1,5 +1,6 @@
 require 'ffmpeg/class_methods'
 require 'ffmpeg/main_options'
+require 'ffmpeg/file_extensions'
 require 'ffmpeg/video_options'
 require 'ffmpeg/audio_options'
 require 'ffmpeg/ffmpeg_command'
@@ -45,7 +46,10 @@ module FFMpeg
       disable_method_checking!
       raise exception
     end
-    FFMpegCommand << "#{to_file[:to]}" unless to_file[:to].nil?
+    
+    build_output_file_name(from_file, to_file[:to]) do |file_name|
+      FFMpegCommand << file_name
+    end
   end
   
   #
@@ -56,7 +60,7 @@ module FFMpeg
   end
 
   #
-  # Ru§ns ffmpeg
+  # Runs ffmpeg
   #
   def run
     @@ffmpeg_path ||= locate_ffmpeg
@@ -70,6 +74,15 @@ module FFMpeg
   
   private
   
+  def build_output_file_name(from_file, to_file)
+    return if to_file.nil?
+    if FileExtensions::EXT.include?(to_file.to_s)
+      yield "#{from_file.delete(File.extname(from_file))}.#{to_file}"
+    else
+      yield "#{to_file}"
+    end
+  end
+
   #
   # Checks if the thread local varialble 'method checking disabled'
   # is true or false

@@ -17,6 +17,18 @@ describe "FFMpeg" do
     
     FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file}")
   end
+
+  it "should generate a valid command when fed only an extensions as :to" do
+    convert @from_file, :to => :mp4
+
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@from_file.delete(File.extname(@from_file))}.mp4")
+  end
+
+  it "should generate a valid command without specifying :to" do
+    convert @from_file
+
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file}")
+  end
 end
 
 describe "FFMpeg Main Options" do
