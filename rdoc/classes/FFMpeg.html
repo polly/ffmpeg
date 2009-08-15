@@ -163,19 +163,19 @@ href="FFMpeg/ClassMethods.html">ClassMethods</a> module
             onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000005-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 18</span>
-18:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">klass</span>)
-19:     <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">ClassMethods</span>
-20:     
-21:     <span class="ruby-comment cmt">#</span>
-22:     <span class="ruby-comment cmt"># Everytime a method is added to the</span>
-23:     <span class="ruby-comment cmt"># class, check for conflicts with existing</span>
-24:     <span class="ruby-comment cmt"># module methods</span>
-25:     <span class="ruby-comment cmt">#</span>
-26:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">method_added</span>(<span class="ruby-identifier">name</span>)
-27:       <span class="ruby-identifier">check_method</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method_checking_enabled?</span>
-28:     <span class="ruby-keyword kw">end</span>
-29:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 19</span>
+19:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">klass</span>)
+20:     <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">ClassMethods</span>
+21:     
+22:     <span class="ruby-comment cmt">#</span>
+23:     <span class="ruby-comment cmt"># Everytime a method is added to the</span>
+24:     <span class="ruby-comment cmt"># class, check for conflicts with existing</span>
+25:     <span class="ruby-comment cmt"># module methods</span>
+26:     <span class="ruby-comment cmt">#</span>
+27:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">method_added</span>(<span class="ruby-identifier">name</span>)
+28:       <span class="ruby-identifier">check_method</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method_checking_enabled?</span>
+29:     <span class="ruby-keyword kw">end</span>
+30:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -207,17 +207,20 @@ Sets up an FFmpegCommand for converting files:
             onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000006-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 40</span>
-40:   <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">convert</span><span class="ruby-identifier">convert</span>(<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">to_file</span> = {})
-41:     <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-i #{from_file}&quot;</span>
-42:     <span class="ruby-keyword kw">begin</span>
-43:       <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
-44:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>
-45:       <span class="ruby-identifier">disable_method_checking!</span>
-46:       <span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span>
-47:     <span class="ruby-keyword kw">end</span>
-48:     <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{to_file[:to]}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">to_file</span>[<span class="ruby-identifier">:to</span>].<span class="ruby-identifier">nil?</span>
-49:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 41</span>
+41:   <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">convert</span><span class="ruby-identifier">convert</span>(<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">to_file</span> = {})
+42:     <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-i #{from_file}&quot;</span>
+43:     <span class="ruby-keyword kw">begin</span>
+44:       <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+45:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>
+46:       <span class="ruby-identifier">disable_method_checking!</span>
+47:       <span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span>
+48:     <span class="ruby-keyword kw">end</span>
+49:     
+50:     <span class="ruby-identifier">build_output_file_name</span>(<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">to_file</span>[<span class="ruby-identifier">:to</span>]) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file_name</span><span class="ruby-operator">|</span>
+51:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">file_name</span>
+52:     <span class="ruby-keyword kw">end</span>
+53:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -240,10 +243,10 @@ Explicitly set ffmpeg path
             onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000007-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 54</span>
-54:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ffmpeg_path</span>(<span class="ruby-identifier">path</span>)
-55:     <span class="ruby-ivar">@@ffmpeg_path</span> = <span class="ruby-identifier">path</span>
-56:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 58</span>
+58:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ffmpeg_path</span>(<span class="ruby-identifier">path</span>)
+59:     <span class="ruby-ivar">@@ffmpeg_path</span> = <span class="ruby-identifier">path</span>
+60:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -260,22 +263,22 @@ Explicitly set ffmpeg path
       
         <div class="method-description">
           <p>
-Ru§ns ffmpeg
+Runs ffmpeg
 </p>
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000008-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 61</span>
-61:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
-62:     <span class="ruby-ivar">@@ffmpeg_path</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">locate_ffmpeg</span>
-63:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@@ffmpeg_path</span>.<span class="ruby-identifier">empty?</span>
-64:       <span class="ruby-identifier">execute_command</span> <span class="ruby-constant">FFMpegCommand</span>.<span class="ruby-identifier">command</span>(<span class="ruby-ivar">@@ffmpeg_path</span>)
-65:     <span class="ruby-keyword kw">else</span>
-66:       <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Couldn't locate ffmpeg, try to specify an explicit path
-67:                     with the ffmpeg_path(path) method&quot;</span>
-68:     <span class="ruby-keyword kw">end</span>
-69:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 65</span>
+65:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
+66:     <span class="ruby-ivar">@@ffmpeg_path</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">locate_ffmpeg</span>
+67:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@@ffmpeg_path</span>.<span class="ruby-identifier">empty?</span>
+68:       <span class="ruby-identifier">execute_command</span> <span class="ruby-constant">FFMpegCommand</span>.<span class="ruby-identifier">command</span>(<span class="ruby-ivar">@@ffmpeg_path</span>)
+69:     <span class="ruby-keyword kw">else</span>
+70:       <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Couldn't locate ffmpeg, try to specify an explicit path
+71:                     with the ffmpeg_path(path) method&quot;</span>
+72:     <span class="ruby-keyword kw">end</span>
+73:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

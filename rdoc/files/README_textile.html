@@ -5,10 +5,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>File: helper_methods.rb</title>
+  <title>File: README.textile</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
   // <![CDATA[
 
@@ -47,11 +47,11 @@
 
 
   <div id="fileHeader">
-    <h1>helper_methods.rb</h1>
+    <h1>README.textile</h1>
     <table class="header-table">
     <tr class="top-aligned-row">
       <td><strong>Path:</strong></td>
-      <td>lib/ffmpeg/helper_methods.rb
+      <td>README.textile
       </td>
     </tr>
     <tr class="top-aligned-row">
@@ -68,6 +68,58 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <p>
+h2. <a href="../classes/FFMpeg.html">FFMpeg</a>
+</p>
+<p>
+A DSL for building and executing ffmpeg commands.
+</p>
+<p>
+h2. Requirements
+</p>
+<p>
+It requires that you already have ffmpeg installed, obviously :)
+</p>
+<p>
+h2. Install
+</p>
+<p>
+gem install polly-ffmpeg &#8212;source <a
+href="http://gems.github.com">gems.github.com</a>
+</p>
+<p>
+h2. Usage
+</p>
+<p>
+To build and execute a command you would use the FFMpeg::convert method and
+then call the FFMpeg::run method like this:
+</p>
+<p>
+include <a href="../classes/FFMpeg.html">FFMpeg</a>
+</p>
+<p>
+convert &quot;file.ext&quot;, :to =&gt; &quot;new_file.ext&quot; do
+&lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;seek
+&quot;00:01:13&quot;&lt;/span&gt;
+&lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;duration
+&quot;00:10:01&quot;&lt;/span&gt; end.run
+</p>
+<p>
+For more information checkout the &quot;documentation&quot;:<a
+href="http://polly.github.com/ffmpeg">polly.github.com/ffmpeg</a>/
+</p>
+<p>
+h2. Credit where credit&#8216;s due
+</p>
+<p>
+Thank&#8216;s to &quot;jwthompson2&quot;:<a
+href="http://github.com/jwthompson2">github.com/jwthompson2</a>,
+there&#8216;s now support for all of the standard video and audio options
+from the ffmpeg documentation as well as improved and refactored specs.
+</p>
+
+    </div>
 
 
    </div>
