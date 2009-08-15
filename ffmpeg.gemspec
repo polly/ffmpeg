@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Patrik Hedman"]
   s.date = %q{2009-07-03}
-  s.description = %q{Need to write one}
+  s.description = %q{A DSL for building and executing ffmpeg commands}
   s.email = %q{patrik@moresale.se}
   s.extra_rdoc_files = [
     "LICENSE",
