@@ -91,10 +91,24 @@
       seek     &quot;00:01:13&quot;
       duration &quot;00:10:01&quot;
     end.run
+
+  If you want the output file to have the same name as the input file it’s enough to just specify the new file extension like this:
+
+    require "rubygems"
+    require "ffmpeg"
+    include FFMpeg
+
+    convert "finding_that_nemo_dude.avi", :to => :flv do
+      ...
+    end
+
+  This will produce an output file called finding_that_nemo_dude.flv
 </pre>
+
 <h2>Credit where credit&#8216;s due</h2>
 <pre>
-  Thank's to jwthompson2 (http://github.com/jwthompson2), there's now support for all of the standard video and audio options from the ffmpeg documentation as well as improved and refactored specs.
+  Thank's to jwthompson2 (http://github.com/jwthompson2), there's now support for all of the standard video and audio options from the ffmpeg documentation as well as improved 
+  and refactored specs.
 </pre>
 
     </div>
