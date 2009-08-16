@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Fri Aug 07 15:27:15 +0200 2009</td>
+      <td>Sun Aug 16 15:41:33 +0200 2009</td>
     </tr>
     </table>
   </div>
@@ -96,7 +96,8 @@ To build and execute a command you would use the FFMpeg::convert method and
 then call the FFMpeg::run method like this:
 </p>
 <p>
-include <a href="../classes/FFMpeg.html">FFMpeg</a>
+require &quot;rubygems&quot; require &quot;ffmpeg&quot; include <a
+href="../classes/FFMpeg.html">FFMpeg</a>
 </p>
 <p>
 convert &quot;file.ext&quot;, :to =&gt; &quot;new_file.ext&quot; do
@@ -106,8 +107,25 @@ convert &quot;file.ext&quot;, :to =&gt; &quot;new_file.ext&quot; do
 &quot;00:10:01&quot;&lt;/span&gt; end.run
 </p>
 <p>
+If you want the output file to have tha same name as the input file
+it&#8216;s enough to just specify the new file extension like this:
+</p>
+<p>
+require &quot;rubygems&quot; require &quot;ffmpeg&quot; include <a
+href="../classes/FFMpeg.html">FFMpeg</a>
+</p>
+<p>
+convert &quot;finding_that_nemo_dude.avi&quot;, :to =&gt; :flv do
+&lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#8230;&lt;/span&gt;
+end
+</p>
+<p>
+This will produce an output file called finding_that_nemo_dude.flv
+</p>
+<p>
 For more information checkout the &quot;documentation&quot;:<a
-href="http://polly.github.com/ffmpeg">polly.github.com/ffmpeg</a>/
+href="http://polly.github.com/ffmpeg">polly.github.com/ffmpeg</a>/ or my
+&quot;blog&quot;:<a href="http://pastbedti.me">pastbedti.me</a>/
 </p>
 <p>
 h2. Credit where credit&#8216;s due
