@@ -14,6 +14,8 @@ h2. Usage
 
 To build and execute a command you would use the FFMpeg::convert method and then call the FFMpeg::run method like this:
 
+require "rubygems"
+require "ffmpeg"
 include FFMpeg
 
 convert "file.ext", :to => "new_file.ext" do
@@ -21,8 +23,19 @@ convert "file.ext", :to => "new_file.ext" do
 <span>&nbsp;&nbsp;&nbsp;&nbsp;duration "00:10:01"</span>
 end.run
 
-For more information checkout the "documentation":http://polly.github.com/ffmpeg/
+If you want the output file to have tha same name as the input file it's enough to just specify the new file extension like this:
 
+require "rubygems"
+require "ffmpeg"
+include FFMpeg
+
+convert "finding_that_nemo_dude.avi", :to => :flv do
+<span>&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+end
+
+This will produce an output file called finding_that_nemo_dude.flv
+
+For more information checkout the "documentation":http://polly.github.com/ffmpeg/ or my "blog":http://pastbedti.me/
 
 h2. Credit where credit's due
 
