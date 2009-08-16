@@ -23,7 +23,7 @@ convert "file.ext", :to => "new_file.ext" do
 <span>&nbsp;&nbsp;&nbsp;&nbsp;duration "00:10:01"</span>
 end.run
 
-If you want the output file to have tha same name as the input file it's enough to just specify the new file extension like this:
+If you want the output file to have the same name as the input file it's enough to just specify the new file extension like this:
 
 require "rubygems"
 require "ffmpeg"
