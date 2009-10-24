@@ -39,5 +39,7 @@ For more information checkout the "documentation":http://polly.github.com/ffmpeg
 
 h2. Credit where credit's due
 
-Thank's to "jwthompson2":http://github.com/jwthompson2, there's now support for all of the standard video and audio options and most of the advanced video options from the ffmpeg documentation as well 
+Thank's to "jwthompson2":http://github.com/jwthompson2 there's now support for all of the standard video and audio options and most of the advanced video options from the ffmpeg documentation as well 
 as improved and refactored specs.
+
+Thanks to "jamesdaniels":http://github.com/jamesdaniels for fixing a nasty output path error while using the :to => extension option
