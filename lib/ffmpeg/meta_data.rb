@@ -2,6 +2,12 @@ module FFMpeg
   module MetaData
     EXIF_UTILITY = 'exiftool'
     
+    #
+    # Retrieves meta data from the file using exiftool, and returned in a hash
+    # allowing for complex conversion rules.
+    #
+    #   video_bitrate "300k" if meta[:video_bitrate].to_f > 300
+    #
     def meta
       if `which #{EXIF_UTILITY}`.empty?
         {}
@@ -11,5 +17,6 @@ module FFMpeg
         }
       end
     end
+    
   end
 end
