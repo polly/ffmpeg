@@ -30,6 +30,7 @@ describe "FFMpeg" do
 
     FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file}")
   end
+  
 end
 
 describe "FFMpeg Main Options" do
