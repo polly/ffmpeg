@@ -6,7 +6,7 @@ describe "Video Meta Data" do
     @from_file = File.join(Dir.pwd, 'spec/files/terminal.mpg')
   end
 
-  it "should get current_length" do
+  it "should get meta data" do
     convert @from_file, :to => :mp4 do
       meta[:file_name].should eql("terminal.mpg")
     end
