@@ -79,7 +79,7 @@ module FFMpeg
   def build_output_file_name(from_file, to_file)
     return if to_file.nil?
     if FileExtensions::EXT.include?(to_file.to_s)
-      yield "#{from_file.delete(File.extname(from_file))}.#{to_file}"
+      yield from_file.gsub(/#{File.extname(from_file)}$/, ".#{to_file}")
     else
       yield "#{to_file}"
     end
