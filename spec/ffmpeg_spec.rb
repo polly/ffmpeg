@@ -2,7 +2,8 @@ require File.dirname(__FILE__) + '/spec_helper'
 
 describe "FFMpeg" do
   before(:each) do
-    @from_file, @to_file = "~/Desktop/test.avi", "~/Desktop/test2.avi"
+    @from_file, @to_file = "~/Desktop/avi/test.avi", "~/Desktop/avi/test2.avi"
+    @to_file_from_mp4_shortcut = "~/Desktop/avi/test.mp4"
     FFMpegCommand.clear
   end
   
@@ -21,7 +22,7 @@ describe "FFMpeg" do
   it "should generate a valid command when fed only an extensions as :to" do
     convert @from_file, :to => :mp4
 
-    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@from_file.delete(File.extname(@from_file))}.mp4")
+    FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file} #{@to_file_from_mp4_shortcut}")
   end
 
   it "should generate a valid command without specifying :to" do
@@ -29,11 +30,12 @@ describe "FFMpeg" do
 
     FFMpegCommand.command("ffmpeg").should eql("ffmpeg -i #{@from_file}")
   end
+  
 end
 
 describe "FFMpeg Main Options" do
   before(:each) do
-    @from_file, @to_file = "~/Desktop/test.avi", "~/Desktop/test2.avi"
+    @from_file, @to_file = "~/Desktop/test.avi", "~/Desktop/test2.flv"
     FFMpegCommand.clear
   end
   

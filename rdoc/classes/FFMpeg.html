@@ -71,6 +71,10 @@
                 lib/ffmpeg/main_options.rb
                 </a>
         <br />
+                <a href="../files/lib/ffmpeg/meta_data_rb.html">
+                lib/ffmpeg/meta_data.rb
+                </a>
+        <br />
                 <a href="../files/lib/ffmpeg/video_advanced_options_rb.html">
                 lib/ffmpeg/video_advanced_options.rb
                 </a>
@@ -124,6 +128,7 @@
         <span class="include-name"><a href="FFMpeg/VideoOptions.html">VideoOptions</a></span>
         <span class="include-name"><a href="FFMpeg/VideoAdvancedOptions.html">VideoAdvancedOptions</a></span>
         <span class="include-name"><a href="FFMpeg/AudioOptions.html">AudioOptions</a></span>
+        <span class="include-name"><a href="FFMpeg/MetaData.html">MetaData</a></span>
       </div>
     </div>
 
@@ -136,6 +141,7 @@
 Module <a href="FFMpeg/ClassMethods.html" class="link">FFMpeg::ClassMethods</a><br />
 Module <a href="FFMpeg/HelperMethods.html" class="link">FFMpeg::HelperMethods</a><br />
 Module <a href="FFMpeg/MainOptions.html" class="link">FFMpeg::MainOptions</a><br />
+Module <a href="FFMpeg/MetaData.html" class="link">FFMpeg::MetaData</a><br />
 Module <a href="FFMpeg/VideoAdvancedOptions.html" class="link">FFMpeg::VideoAdvancedOptions</a><br />
 Module <a href="FFMpeg/VideoOptions.html" class="link">FFMpeg::VideoOptions</a><br />
 
@@ -155,7 +161,8 @@ Module <a href="FFMpeg/VideoOptions.html" class="link">FFMpeg::VideoOptions</a><
         <a name="M000005"></a>
 
         <div class="method-heading">
-          <a href="#M000005" class="method-signature">
+          <a href="FFMpeg.src/M000005.html" target="Code" class="method-signature"
+            onclick="popupCode('FFMpeg.src/M000005.html');return false;">
           <span class="method-name">included</span><span class="method-args">(klass)</span>
           </a>
         </div>
@@ -165,25 +172,6 @@ Module <a href="FFMpeg/VideoOptions.html" class="link">FFMpeg::VideoOptions</a><
 When mixed into a class, extend it with the <a
 href="FFMpeg/ClassMethods.html">ClassMethods</a> module
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000005-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 21</span>
-21:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">klass</span>)
-22:     <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">ClassMethods</span>
-23:     
-24:     <span class="ruby-comment cmt">#</span>
-25:     <span class="ruby-comment cmt"># Everytime a method is added to the</span>
-26:     <span class="ruby-comment cmt"># class, check for conflicts with existing</span>
-27:     <span class="ruby-comment cmt"># module methods</span>
-28:     <span class="ruby-comment cmt">#</span>
-29:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">method_added</span>(<span class="ruby-identifier">name</span>)
-30:       <span class="ruby-identifier">check_method</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method_checking_enabled?</span>
-31:     <span class="ruby-keyword kw">end</span>
-32:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
@@ -193,7 +181,8 @@ href="FFMpeg/ClassMethods.html">ClassMethods</a> module
         <a name="M000006"></a>
 
         <div class="method-heading">
-          <a href="#M000006" class="method-signature">
+          <a href="FFMpeg.src/M000006.html" target="Code" class="method-signature"
+            onclick="popupCode('FFMpeg.src/M000006.html');return false;">
           <span class="method-name">convert</span><span class="method-args">(from_file, to_file = {}) {|if block_given?| ...}</span>
           </a>
         </div>
@@ -209,26 +198,6 @@ Sets up an FFmpegCommand for converting files:
    resolution &quot;800x600&quot;
  end
 </pre>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000006-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 43</span>
-43:   <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">convert</span><span class="ruby-identifier">convert</span>(<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">to_file</span> = {})
-44:     <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-i #{from_file}&quot;</span>
-45:     <span class="ruby-keyword kw">begin</span>
-46:       <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
-47:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>
-48:       <span class="ruby-identifier">disable_method_checking!</span>
-49:       <span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span>
-50:     <span class="ruby-keyword kw">end</span>
-51:     
-52:     <span class="ruby-identifier">build_output_file_name</span>(<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">to_file</span>[<span class="ruby-identifier">:to</span>]) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file_name</span><span class="ruby-operator">|</span>
-53:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">file_name</span>
-54:     <span class="ruby-keyword kw">end</span>
-55:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
@@ -236,7 +205,8 @@ Sets up an FFmpegCommand for converting files:
         <a name="M000007"></a>
 
         <div class="method-heading">
-          <a href="#M000007" class="method-signature">
+          <a href="FFMpeg.src/M000007.html" target="Code" class="method-signature"
+            onclick="popupCode('FFMpeg.src/M000007.html');return false;">
           <span class="method-name">ffmpeg_path</span><span class="method-args">(path)</span>
           </a>
         </div>
@@ -245,16 +215,6 @@ Sets up an FFmpegCommand for converting files:
           <p>
 Explicitly set ffmpeg path
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000007-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 60</span>
-60:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ffmpeg_path</span>(<span class="ruby-identifier">path</span>)
-61:     <span class="ruby-ivar">@@ffmpeg_path</span> = <span class="ruby-identifier">path</span>
-62:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
@@ -262,7 +222,8 @@ Explicitly set ffmpeg path
         <a name="M000008"></a>
 
         <div class="method-heading">
-          <a href="#M000008" class="method-signature">
+          <a href="FFMpeg.src/M000008.html" target="Code" class="method-signature"
+            onclick="popupCode('FFMpeg.src/M000008.html');return false;">
           <span class="method-name">run</span><span class="method-args">()</span>
           </a>
         </div>
@@ -271,22 +232,6 @@ Explicitly set ffmpeg path
           <p>
 Runs ffmpeg
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000008-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg.rb, line 67</span>
-67:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
-68:     <span class="ruby-ivar">@@ffmpeg_path</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">locate_ffmpeg</span>
-69:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@@ffmpeg_path</span>.<span class="ruby-identifier">empty?</span>
-70:       <span class="ruby-identifier">execute_command</span> <span class="ruby-constant">FFMpegCommand</span>.<span class="ruby-identifier">command</span>(<span class="ruby-ivar">@@ffmpeg_path</span>)
-71:     <span class="ruby-keyword kw">else</span>
-72:       <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Couldn't locate ffmpeg, try to specify an explicit path
-73:                     with the ffmpeg_path(path) method&quot;</span>
-74:     <span class="ruby-keyword kw">end</span>
-75:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 

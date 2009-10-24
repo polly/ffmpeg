@@ -80,14 +80,14 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000051">audio_bitrate</a>&nbsp;&nbsp;
-      <a href="#M000052">audio_channels</a>&nbsp;&nbsp;
-      <a href="#M000054">audio_codec</a>&nbsp;&nbsp;
-      <a href="#M000049">audio_frames</a>&nbsp;&nbsp;
-      <a href="#M000056">audio_language</a>&nbsp;&nbsp;
-      <a href="#M000050">audio_sampling</a>&nbsp;&nbsp;
-      <a href="#M000053">disable_audio</a>&nbsp;&nbsp;
-      <a href="#M000055">new_audio</a>&nbsp;&nbsp;
+      <a href="#M000095">audio_bitrate</a>&nbsp;&nbsp;
+      <a href="#M000096">audio_channels</a>&nbsp;&nbsp;
+      <a href="#M000098">audio_codec</a>&nbsp;&nbsp;
+      <a href="#M000093">audio_frames</a>&nbsp;&nbsp;
+      <a href="#M000100">audio_language</a>&nbsp;&nbsp;
+      <a href="#M000094">audio_sampling</a>&nbsp;&nbsp;
+      <a href="#M000097">disable_audio</a>&nbsp;&nbsp;
+      <a href="#M000099">new_audio</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -109,11 +109,12 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000051" class="method-detail">
-        <a name="M000051"></a>
+      <div id="method-M000095" class="method-detail">
+        <a name="M000095"></a>
 
         <div class="method-heading">
-          <a href="#M000051" class="method-signature">
+          <a href="AudioOptions.src/M000095.html" target="Code" class="method-signature"
+            onclick="popupCode('AudioOptions.src/M000095.html');return false;">
           <span class="method-name">audio_bitrate</span><span class="method-args">(bitrate)</span>
           </a>
         </div>
@@ -122,24 +123,15 @@
           <p>
 Set the audio bitrate in bit/s (default = 64k).
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000051-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000051-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/audio_options.rb, line 14</span>
-14:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">audio_bitrate</span>(<span class="ruby-identifier">bitrate</span>)
-15:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-ab #{bitrate}&quot;</span>
-16:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
-      <div id="method-M000052" class="method-detail">
-        <a name="M000052"></a>
+      <div id="method-M000096" class="method-detail">
+        <a name="M000096"></a>
 
         <div class="method-heading">
-          <a href="#M000052" class="method-signature">
+          <a href="AudioOptions.src/M000096.html" target="Code" class="method-signature"
+            onclick="popupCode('AudioOptions.src/M000096.html');return false;">
           <span class="method-name">audio_channels</span><span class="method-args">(number)</span>
           </a>
         </div>
@@ -148,24 +140,15 @@ Set the audio bitrate in bit/s (default = 64k).
           <p>
 Set the number of audio channels (default = 1).
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000052-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000052-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/audio_options.rb, line 19</span>
-19:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">audio_channels</span>(<span class="ruby-identifier">number</span>)
-20:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-ac #{number}&quot;</span>
-21:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
-      <div id="method-M000054" class="method-detail">
-        <a name="M000054"></a>
+      <div id="method-M000098" class="method-detail">
+        <a name="M000098"></a>
 
         <div class="method-heading">
-          <a href="#M000054" class="method-signature">
+          <a href="AudioOptions.src/M000098.html" target="Code" class="method-signature"
+            onclick="popupCode('AudioOptions.src/M000098.html');return false;">
           <span class="method-name">audio_codec</span><span class="method-args">(codec)</span>
           </a>
         </div>
@@ -175,24 +158,15 @@ Set the number of audio channels (default = 1).
 Force audio codec to codec. Use the copy special value to specify that the
 raw codec data must be copied as is.
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000054-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000054-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/audio_options.rb, line 29</span>
-29:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">audio_codec</span>(<span class="ruby-identifier">codec</span>)
-30:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-acodec #{codec}&quot;</span>
-31:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
-      <div id="method-M000049" class="method-detail">
-        <a name="M000049"></a>
+      <div id="method-M000093" class="method-detail">
+        <a name="M000093"></a>
 
         <div class="method-heading">
-          <a href="#M000049" class="method-signature">
+          <a href="AudioOptions.src/M000093.html" target="Code" class="method-signature"
+            onclick="popupCode('AudioOptions.src/M000093.html');return false;">
           <span class="method-name">audio_frames</span><span class="method-args">(number)</span>
           </a>
         </div>
@@ -201,24 +175,15 @@ raw codec data must be copied as is.
           <p>
 Set the number of audio frames to record.
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000049-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000049-source">
-<pre>
-   <span class="ruby-comment cmt"># File lib/ffmpeg/audio_options.rb, line 4</span>
-4:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">audio_frames</span>(<span class="ruby-identifier">number</span>)
-5:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-aframes #{number}&quot;</span>
-6:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
-      <div id="method-M000056" class="method-detail">
-        <a name="M000056"></a>
+      <div id="method-M000100" class="method-detail">
+        <a name="M000100"></a>
 
         <div class="method-heading">
-          <a href="#M000056" class="method-signature">
+          <a href="AudioOptions.src/M000100.html" target="Code" class="method-signature"
+            onclick="popupCode('AudioOptions.src/M000100.html');return false;">
           <span class="method-name">audio_language</span><span class="method-args">(code)</span>
           </a>
         </div>
@@ -227,24 +192,15 @@ Set the number of audio frames to record.
           <p>
 Set the ISO 639 language code (3 letters) of the current audio stream.
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000056-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000056-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/audio_options.rb, line 43</span>
-43:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">audio_language</span>(<span class="ruby-identifier">code</span>)
-44:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-alang #{code}&quot;</span>
-45:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
-      <div id="method-M000050" class="method-detail">
-        <a name="M000050"></a>
+      <div id="method-M000094" class="method-detail">
+        <a name="M000094"></a>
 
         <div class="method-heading">
-          <a href="#M000050" class="method-signature">
+          <a href="AudioOptions.src/M000094.html" target="Code" class="method-signature"
+            onclick="popupCode('AudioOptions.src/M000094.html');return false;">
           <span class="method-name">audio_sampling</span><span class="method-args">(frequency)</span>
           </a>
         </div>
@@ -253,24 +209,15 @@ Set the ISO 639 language code (3 letters) of the current audio stream.
           <p>
 Set the audio sampling frequency (default = 44100 Hz).
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000050-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000050-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/audio_options.rb, line 9</span>
- 9:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">audio_sampling</span>(<span class="ruby-identifier">frequency</span>)
-10:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-ar #{frequency}&quot;</span>
-11:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
-      <div id="method-M000053" class="method-detail">
-        <a name="M000053"></a>
+      <div id="method-M000097" class="method-detail">
+        <a name="M000097"></a>
 
         <div class="method-heading">
-          <a href="#M000053" class="method-signature">
+          <a href="AudioOptions.src/M000097.html" target="Code" class="method-signature"
+            onclick="popupCode('AudioOptions.src/M000097.html');return false;">
           <span class="method-name">disable_audio</span><span class="method-args">()</span>
           </a>
         </div>
@@ -279,24 +226,15 @@ Set the audio sampling frequency (default = 44100 Hz).
           <p>
 Disable audio recording.
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000053-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000053-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/audio_options.rb, line 24</span>
-24:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable_audio</span>
-25:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;-an&quot;</span>
-26:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
-      <div id="method-M000055" class="method-detail">
-        <a name="M000055"></a>
+      <div id="method-M000099" class="method-detail">
+        <a name="M000099"></a>
 
         <div class="method-heading">
-          <a href="#M000055" class="method-signature">
+          <a href="AudioOptions.src/M000099.html" target="Code" class="method-signature"
+            onclick="popupCode('AudioOptions.src/M000099.html');return false;">
           <span class="method-name">new_audio</span><span class="method-args">()</span>
           </a>
         </div>
@@ -313,16 +251,6 @@ override the mapping using -map as usual. Example:
 ffmpeg -i file.mpg -vcodec copy -acodec ac3 -ab 384k test.mpg -acodec mp2
 -ab 192k -newaudio
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000055-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000055-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/audio_options.rb, line 38</span>
-38:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_audio</span>
-39:       <span class="ruby-constant">FFMpegCommand</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;-newaudio&quot;</span>
-40:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 

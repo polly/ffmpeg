@@ -6,6 +6,7 @@ require 'ffmpeg/video_advanced_options'
 require 'ffmpeg/audio_options'
 require 'ffmpeg/ffmpeg_command'
 require 'ffmpeg/helper_methods'
+require 'ffmpeg/meta_data'
 
 module FFMpeg
   include HelperMethods
@@ -13,6 +14,7 @@ module FFMpeg
   include VideoOptions
   include VideoAdvancedOptions
   include AudioOptions
+  include MetaData
   
   #
   # When mixed into a class, extend  
@@ -41,6 +43,7 @@ module FFMpeg
   #  end
   #
   def convert(from_file, to_file = {})
+    @from_file = from_file
     FFMpegCommand << "-i #{from_file}"
     begin
       yield if block_given?
@@ -79,7 +82,7 @@ module FFMpeg
   def build_output_file_name(from_file, to_file)
     return if to_file.nil?
     if FileExtensions::EXT.include?(to_file.to_s)
-      yield "#{from_file.delete(File.extname(from_file))}.#{to_file}"
+      yield from_file.gsub(/#{File.extname(from_file)}$/, ".#{to_file}")
     else
       yield "#{to_file}"
     end

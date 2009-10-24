@@ -109,22 +109,13 @@
         <a name="M000001"></a>
 
         <div class="method-heading">
-          <a href="#M000001" class="method-signature">
+          <a href="FFMpegCommand.src/M000001.html" target="Code" class="method-signature"
+            onclick="popupCode('FFMpegCommand.src/M000001.html');return false;">
           <span class="method-name">&lt;&lt;</span><span class="method-args">(cmd)</span>
           </a>
         </div>
       
         <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000001-source">
-<pre>
-   <span class="ruby-comment cmt"># File lib/ffmpeg/ffmpeg_command.rb, line 6</span>
-6:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">cmd</span>)
-7:     <span class="ruby-ivar">@commands</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cmd</span>
-8:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
@@ -132,22 +123,13 @@
         <a name="M000002"></a>
 
         <div class="method-heading">
-          <a href="#M000002" class="method-signature">
+          <a href="FFMpegCommand.src/M000002.html" target="Code" class="method-signature"
+            onclick="popupCode('FFMpegCommand.src/M000002.html');return false;">
           <span class="method-name">add_at</span><span class="method-args">(cmd, pos)</span>
           </a>
         </div>
       
         <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000002-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/ffmpeg_command.rb, line 10</span>
-10:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_at</span>(<span class="ruby-identifier">cmd</span>, <span class="ruby-identifier">pos</span>)
-11:     <span class="ruby-ivar">@commands</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-identifier">pos</span>, <span class="ruby-identifier">cmd</span>)
-12:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
@@ -155,22 +137,13 @@
         <a name="M000003"></a>
 
         <div class="method-heading">
-          <a href="#M000003" class="method-signature">
+          <a href="FFMpegCommand.src/M000003.html" target="Code" class="method-signature"
+            onclick="popupCode('FFMpegCommand.src/M000003.html');return false;">
           <span class="method-name">clear</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000003-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/ffmpeg_command.rb, line 14</span>
-14:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear</span>
-15:     <span class="ruby-ivar">@commands</span>.<span class="ruby-identifier">clear</span>
-16:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
@@ -178,26 +151,13 @@
         <a name="M000004"></a>
 
         <div class="method-heading">
-          <a href="#M000004" class="method-signature">
+          <a href="FFMpegCommand.src/M000004.html" target="Code" class="method-signature"
+            onclick="popupCode('FFMpegCommand.src/M000004.html');return false;">
           <span class="method-name">command</span><span class="method-args">(prefix=&quot;&quot;)</span>
           </a>
         </div>
       
         <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000004-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/ffmpeg/ffmpeg_command.rb, line 18</span>
-18:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">command</span>(<span class="ruby-identifier">prefix</span>=<span class="ruby-value str">&quot;&quot;</span>)
-19:     <span class="ruby-identifier">returning</span> <span class="ruby-identifier">prefix</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">prefix</span><span class="ruby-operator">|</span>
-20:       <span class="ruby-ivar">@commands</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">command</span><span class="ruby-operator">|</span>
-21:         <span class="ruby-identifier">prefix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{command}&quot;</span>
-22:       <span class="ruby-keyword kw">end</span>
-23:     <span class="ruby-keyword kw">end</span>
-24:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
         </div>
       </div>
 
