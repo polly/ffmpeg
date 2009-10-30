@@ -8,7 +8,7 @@ It requires that you already have ffmpeg installed, obviously :)
 
 h2. Install
 
-gem install polly-ffmpeg --source http://gems.github.com
+gem install ffmpeg --source http://gemcutter.org
 
 h2. Usage
 
