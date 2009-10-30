@@ -4,7 +4,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "ffmpeg"
-    s.summary = %Q{TODO}
+    s.summary = %Q{A dsl for building and executing ffmpeg commands}
     s.email = "patrik@moresale.se"
     s.homepage = "http://github.com/polly/ffmpeg"
     s.description = "A dsl for building and executing ffmpeg commands"
