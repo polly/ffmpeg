@@ -7,7 +7,7 @@ begin
     s.summary = %Q{TODO}
     s.email = "patrik@moresale.se"
     s.homepage = "http://github.com/polly/ffmpeg"
-    s.description = "TODO"
+    s.description = "A dsl for building and executing ffmpeg commands"
     s.authors = ["Patrik Hedman"]
   end
 rescue LoadError
