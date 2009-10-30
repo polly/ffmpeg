@@ -65,7 +65,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.3}
-  s.summary = %q{TODO}
+  s.summary = %q{A dsl for building and executing ffmpeg commands}
   s.test_files = [
     "spec/audio_options_spec.rb",
      "spec/ffmpeg_spec.rb",
