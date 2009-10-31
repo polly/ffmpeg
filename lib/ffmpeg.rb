@@ -43,7 +43,6 @@ module FFMpeg
   #  end
   #
   def convert(from_file, to_file = {})
-    @from_file = from_file
     FFMpegCommand << "-i #{from_file}"
     begin
       yield if block_given?
